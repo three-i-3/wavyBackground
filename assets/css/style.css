@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+	font-family: 'Poppins', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
+	margin: 0 0;
+	padding: 0 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+
+.loader {
+	position: relative;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	overflow: hidden;
+	transform: rotate(170deg);
+}
+
+.loader span {
+	position: absolute;
+	top: calc(12px * var(--i));
+	right: calc(12px * var(--i));
+	bottom: calc(12px * var(--i));
+	left: calc(12px * var(--i));
+	border: 10px solid #0b0b0b;
+	border-top: 10px solid #0fa;
+	border-left: 10px solid #0fa;
+	border-radius: 50%;
+	animation: wave-animate 1s alternate ease-in-out infinite;
+	filter: hue-rotate(calc(60deg * var(--i)));
+	animation-delay: calc(-0.1s * var(--i));
+}
+
+@keyframes wave-animate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(90deg);
+	}
+}
